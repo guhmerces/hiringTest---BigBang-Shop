@@ -1,2 +1,2 @@
 # hiringTest
-BigBang Technical challenge - recruitment
+Technical challenge for recruitment
