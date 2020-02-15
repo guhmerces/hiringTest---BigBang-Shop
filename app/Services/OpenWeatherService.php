@@ -23,7 +23,7 @@ class OpenWeatherService extends ConsumeExternalServices
             return null;
         }
 
-        return kelvinToCelcius($cityWeather->main->temp);
+        return kelvinToCelsius($cityWeather->main->temp);
     }
 
     private function cityWeather(string $city)
