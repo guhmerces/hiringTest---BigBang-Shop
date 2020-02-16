@@ -5,7 +5,7 @@ function playlistBasedOnTemp($temp) {
         case ($temp < 10):
             // Classic playlist
             return "5ggSdArYBwNDU95ePtnPYG";
-            break;            
+            break;
         case ($temp >= 10 && $temp <= 14):
             // Rock playlist
             return "0dRdi9ghHuB3HUJPJ2pZNL";
@@ -22,11 +22,11 @@ function playlistBasedOnTemp($temp) {
 }
 
 function playlistTracksNames($playlist) {
-    $tracks = [];
+    $tracksNames = [];
     foreach($playlist->items as $item) {
-        $tracks[] = $item->track->name;
+        $tracksNames[] = $item->track->name;
     }
-    return $tracks;
+    return $tracksNames;
 }
 
 function kelvinToCelsius($kelvin) {
