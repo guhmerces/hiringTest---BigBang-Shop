@@ -24,6 +24,9 @@ Some exemples for using the application:
 Playlists used in the application : 
     
    https://open.spotify.com/playlist/5ggSdArYBwNDU95ePtnPYG // Classic Musics
+   
    https://open.spotify.com/playlist/0dRdi9ghHuB3HUJPJ2pZNL // Rock Musics
+   
    https://open.spotify.com/playlist/5sTHqyG2DAwmTCopHXHRdz // Pop Musics
+   
    https://open.spotify.com/playlist/0iXxGK2xnmNyzm8WsB1Oss // Party Musics
