@@ -37,7 +37,7 @@ class OpenWeatherService extends ConsumeExternalServices
     {
         $statusMessages = [
             '200' => '',
-            '401' => 'Api Key Inválida. Veja http://openweathermap.org/faq#error401 para mais informações.',
+            '401' => 'OpenWeather Api Key Inválida. Veja http://openweathermap.org/faq#error401 para mais informações.',
             '404' => 'Cidade não encontrada.',
             '429' => 'Você atingiu o limite de requisições no OpenWeather.',
         ];
