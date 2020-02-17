@@ -26,11 +26,6 @@ class OpenWeatherService extends ConsumeExternalServices
         return $cityWeather->main->temp ?? null;
     }
 
-    public function celsiusTemperature(string $city)
-    {
-        return kelvinToCelsius($this->cityTemperature($city));
-    }
-
     private function cityWeather(string $city)
     {
         $cityWeather = $this->makeRequest('GET', "weather?q={$city}&appid=" . env('OPEN_WEATHER_APP_ID'));

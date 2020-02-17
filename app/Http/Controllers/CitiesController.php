@@ -32,11 +32,13 @@ class CitiesController extends Controller
      */
     public function show($city)
     {
-        $temp = $this->openWeatherService->celsiusTemperature($city);
+        $temp = $this->openWeatherService->cityTemperature($city);
 
-        if($this->openWeatherService->statusCode != 200) {
+        if(!$temp) {
            return $this->errorResponse($this->openWeatherService->message, $this->openWeatherService->statusCode);
         }
+
+        $temp = kelvinToCelsius($temp);
 
         $playlistID = playlistBasedOnTemp($temp);
         $playlist = $this->spotifyService->spotifyApi->getPlaylistTracks($playlistID);
