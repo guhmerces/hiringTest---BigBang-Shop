@@ -32,6 +32,6 @@ class CitiesController extends Controller
         $playlistID = playlistBasedOnTemp($temp);
         $playlist = $this->spotifyService->spotifyApi->getPlaylistTracks($playlistID);
 
-        return $this->successResponse('playlist', playlistTracksNames($playlist));
+        return $this->successResponse(playlistTracksNames($playlist));
     }
 }
