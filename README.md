@@ -1,2 +1,2 @@
 # hiringTest
-Technical challenge for recruitment
+BigBang Shop - Technical challenge for recruitment
