@@ -22,7 +22,7 @@ class CitiesController extends Controller
 
     public function show($city)
     {
-        $temp = $this->openWeatherService->cityTemp($city);
+        $temp = $this->openWeatherService->cityTemperature($city);
         $temp = kelvinToCelsius($temp);
 
         if($this->openWeatherService->statusCode != 200) {

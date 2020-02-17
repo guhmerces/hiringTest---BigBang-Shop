@@ -14,7 +14,7 @@ class OpenWeatherService extends ConsumeExternalServices
         $this->setStatusMessages();
     }
 
-    public function cityTemp(string $city)
+    public function cityTemperature(string $city)
     {
         $cityWeather = json_decode($this->cityWeather($city));
 
