@@ -10,10 +10,13 @@ class SpotifyService
 
     public function __construct(SpotifyWebAPI\Session $spotifyClient, SpotifyWebAPI\SpotifyWebAPI $spotifyApi)
     {
-        $this->spotifyApi = $spotifyApi;
+        try {
+            $spotifyClient->requestCredentialsToken();
+        } catch (SpotifyWebAPI\SpotifyWebAPIAuthException $exception) {
+            die("Spotify API : " . $exception->getMessage() . " - error " . $exception->getCode());
+        }
 
-        $spotifyClient->requestCredentialsToken();
-        
-        $this->spotifyApi->setAccessToken($spotifyClient->getAccessToken());        
+        $this->spotifyApi = $spotifyApi;
+        $this->spotifyApi->setAccessToken($spotifyClient->getAccessToken());
     }
 }
