@@ -21,13 +21,12 @@ class OpenWeatherService extends ConsumeExternalServices
     {
         $cityWeather = json_decode($this->cityWeather($city));
 
-        //set a status message according to the statusCode
         $this->message($this->statusCode);
 
         return $cityWeather->main->temp ?? null;
     }
 
-    public function celsiusTemperature($city)
+    public function celsiusTemperature(string $city)
     {
         return kelvinToCelsius($this->cityTemperature($city));
     }
@@ -39,9 +38,6 @@ class OpenWeatherService extends ConsumeExternalServices
         return $cityWeather ?? null;
     }
 
-    /**
-     * Sets personalized status messages for each of status codes
-     */
     private function defineStatusMessages()
     {
         $statusMessages = [

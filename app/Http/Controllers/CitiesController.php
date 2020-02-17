@@ -26,6 +26,7 @@ class CitiesController extends Controller
     }
 
     /**
+     * Returns some playlist tracks according to the temperature of a given city
      * @param $city
      * @return \Illuminate\Http\JsonResponse
      */
