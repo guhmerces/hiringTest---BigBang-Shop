@@ -5,7 +5,7 @@ BigBang Shop - Technical challenge for recruitment
 
 Clone this repository and install the dependencies.
 
-    $ git clone https://github.com/guhmerces/CryptoCast.git
+    $ git clone https://github.com/guhmerces/hiringTest.git
     $ composer install
 
 Don't forget to configure your .env file. Don't forget to assign the env keys bellow :
