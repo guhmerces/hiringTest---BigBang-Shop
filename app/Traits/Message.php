@@ -6,7 +6,7 @@ trait Message
 {
     public $message;
 
-    public $statusMessages;
+    private $statusMessages;
 
     private function message($statusCode)
     {
