@@ -1,4 +1,4 @@
-# hiringTest - BigBang Shop - Lumen Framework
+# hiringTest - BigBang Shop - using Lumen Framework
 
 BigBang Shop - Technical challenge for recruitment
 
@@ -10,7 +10,7 @@ Clone this repository and install the dependencies.
 
 Don't forget to configure your .env file. Don't forget to assign the env keys bellow :
 
-    SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, OPEN_WEATHER_APP_ID
+    APP_URL(With PORT), SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, OPEN_WEATHER_APP_ID
 
 
 Some exemples for using the application:
@@ -20,6 +20,11 @@ Some exemples for using the application:
     /cities/belo horizonte
     /cities/toronto,ca
     /cities/portugal
+
+
+To start the server (Exemple):
+
+    $ php -S localhost:3000 -t public
     
 Playlists used in the application : 
     
