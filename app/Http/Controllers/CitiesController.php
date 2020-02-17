@@ -14,16 +14,24 @@ class CitiesController extends Controller
 
     public $openWeatherService;
 
+    /**
+     * CitiesController constructor.
+     * @param SpotifyService $spotifyService
+     * @param OpenWeatherService $openWeatherService
+     */
     public function __construct(SpotifyService $spotifyService, OpenWeatherService $openWeatherService)
     {
         $this->spotifyService = $spotifyService;
         $this->openWeatherService = $openWeatherService;
     }
 
+    /**
+     * @param $city
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function show($city)
     {
-        $temp = $this->openWeatherService->cityTemperature($city);
-        $temp = kelvinToCelsius($temp);
+        $temp = $this->openWeatherService->celsiusTemperature($city);
 
         if($this->openWeatherService->statusCode != 200) {
            return $this->errorResponse($this->openWeatherService->message, $this->openWeatherService->statusCode);
