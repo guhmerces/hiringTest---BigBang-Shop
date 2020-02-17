@@ -12,8 +12,12 @@
 */
 
 $router->get('/', function () use ($router) {
-    return $router->app->version();
+    return redirect()->to('/cities');
 });
 
 
 $router->get('/cities/{city}', 'CitiesController@show');
+
+$router->get('/cities/', function() {
+    return response()->json(['message' => "Pesquise pelo nome da sua cidade. Exemplo: " . url() . "/cities/toronto"]);
+});
