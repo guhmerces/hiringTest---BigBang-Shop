@@ -1,4 +1,4 @@
-# hiringTest - BigBang Shop -Lumen Framework
+# hiringTest - BigBang Shop - Lumen Framework
 
 BigBang Shop - Technical challenge for recruitment
 
