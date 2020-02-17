@@ -14,11 +14,6 @@ class CitiesController extends Controller
 
     public $openWeatherService;
 
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
     public function __construct(SpotifyService $spotifyService, OpenWeatherService $openWeatherService)
     {
         $this->spotifyService = $spotifyService;
@@ -27,15 +22,16 @@ class CitiesController extends Controller
 
     public function show($city)
     {
-        $temp = $this->openWeatherService->cityCelsiusTemp($city);
+        $temp = $this->openWeatherService->cityTemp($city);
+        $temp = kelvinToCelsius($temp);
 
-        if($this->openWeatherService->errorCode) {
-           return $this->errorResponse($this->openWeatherService->message, $this->openWeatherService->errorCode);
+        if($this->openWeatherService->statusCode != 200) {
+           return $this->errorResponse($this->openWeatherService->message, $this->openWeatherService->statusCode);
         }
 
         $playlistID = playlistBasedOnTemp($temp);
         $playlist = $this->spotifyService->spotifyApi->getPlaylistTracks($playlistID);
 
-        return $this->successResponse(playlistTracksNames($playlist));
+        return $this->successResponse('playlist', playlistTracksNames($playlist));
     }
 }

@@ -9,7 +9,7 @@ class ConsumeExternalServices
 {
     public $baseURI;
 
-    public $errorCode;
+    public $statusCode;
 
     public function makeRequest($verb, $uri)
     {
@@ -19,8 +19,9 @@ class ConsumeExternalServices
 
         try {
             $response = $client->request($verb, $uri);
+            $this->statusCode = '200';
         } catch (ClientException $exception) {
-            $this->errorCode = $exception->getCode();
+            $this->statusCode = $exception->getCode();
             return null;
         }
 
