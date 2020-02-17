@@ -14,7 +14,7 @@ class OpenWeatherService extends ConsumeExternalServices
     public function __construct()
     {
         $this->baseURI = "http://api.openweathermap.org/data/2.5/";
-        $this->setStatusMessages();
+        $this->defineStatusMessages();
     }
 
     public function cityTemperature(string $city)
@@ -42,7 +42,7 @@ class OpenWeatherService extends ConsumeExternalServices
     /**
      * Sets personalized status messages for each of status codes
      */
-    private function setStatusMessages()
+    private function defineStatusMessages()
     {
         $statusMessages = [
             '200' => '',
@@ -51,6 +51,6 @@ class OpenWeatherService extends ConsumeExternalServices
             '429' => 'Você atingiu o limite de requisições no OpenWeather.',
         ];
 
-        $this->statusMessages = $statusMessages;
+        $this->setStatusMessages($statusMessages);
     }
 }
