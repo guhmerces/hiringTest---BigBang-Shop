@@ -40,7 +40,7 @@ class CitiesController extends Controller
 
         $playlistGenre = genreBasedOnTemp($temp);
 
-        $search = $this->spotifyService->spotifyApi->search($playlistGenre, 'playlist', ['limit' => '25']);
+        $search = $this->spotifyService->spotifyApi->search($playlistGenre, 'playlist');
 
         $findedPlaylists =  $search->playlists->items;
 
@@ -48,6 +48,12 @@ class CitiesController extends Controller
 
         $playlist = $this->spotifyService->spotifyApi->getPlaylistTracks($randomPlaylist->id);
 
-        return $this->successResponse(playlistTracksNames($playlist));
+        $data = [
+            'Temperature in ' . ucfirst($city) => $temp,
+            'Playlist name' => $randomPlaylist->name,
+            'Playlist tracks' => playlistTracksNames($playlist)
+        ];
+
+        return $this->successResponse($data);
     }
 }
