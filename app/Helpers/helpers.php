@@ -1,22 +1,22 @@
 <?php
 
-function playlistBasedOnTemp($temp) {
+function genreBasedOnTemp($temp) {
     switch ($temp) {
         case ($temp < 10):
             // Classic playlist
-            return "5ggSdArYBwNDU95ePtnPYG";
+            return "classic music";
             break;
         case ($temp >= 10 && $temp <= 14):
             // Rock playlist
-            return "0dRdi9ghHuB3HUJPJ2pZNL";
+            return "rock n roll";
             break;
         case ($temp >= 15 && $temp <= 30):
             // Pop playlist
-            return "5sTHqyG2DAwmTCopHXHRdz";
+            return "pop music";
             break;
         default:
             // Party playlist
-        return "0iXxGK2xnmNyzm8WsB1Oss";
+        return "party music";
             break;
     }
 }
