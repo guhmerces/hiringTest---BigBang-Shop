@@ -38,8 +38,6 @@ class CitiesController extends Controller
            return $this->errorResponse($this->openWeatherService->message, $this->openWeatherService->statusCode);
         }
 
-        $temp = kelvinToCelsius($temp);
-
         $playlistGenre = genreBasedOnTemp($temp);
 
         $search = $this->spotifyService->spotifyApi->search($playlistGenre, 'playlist', ['limit' => '25']);
