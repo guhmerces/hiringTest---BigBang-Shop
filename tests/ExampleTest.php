@@ -10,6 +10,7 @@ class ExampleTest extends TestCase
     public function testPushAndPop()
     {
         $stack = [];
+
         $this->assertSame(0, count($stack));
 
         array_push($stack, 'foo');
